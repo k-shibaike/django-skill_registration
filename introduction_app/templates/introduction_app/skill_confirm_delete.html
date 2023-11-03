@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h1>確認</h1>
+
+  <section>
+    <h2>{{ skill.name }}を削除しますか</h2>
+
+    <form action="" method="POST">
+      {% csrf_token %}
+      <button type="submit" delete>削除</button>
+    </form>
+
+    <p>
+      <a href="{% url 'introduction_app:index' %}">一覧に戻る</a>
+    </p>
+
+  </section>
+  
+{% endblock %}

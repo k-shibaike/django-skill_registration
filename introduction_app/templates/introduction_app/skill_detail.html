@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h1>詳細</h1>
+
+  <section>
+    <h2>{{ skill.name }}</h2>
+    <p>作成日：{{skill.created_at}}</p>
+    <p>最終更新日：{{ skill.updated_at }}</p>
+
+    <p>
+      <a href="{% url 'introduction_app:index' %}">一覧に戻る</a>
+      <a href="{% url 'introduction_app:update_skill' skill.id %}">編集</a>
+      <a href="{% url 'introduction_app:delete_skill' skill.id %}">削除</a>
+    </p>
+
+  </section>
+  
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1>Product{{ object|yesno:'更新,新規登録' }}</h1>
+<section>
+  <form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="submit">
+      {{ object|yesno:'更新,登録' }}
+    </button>
+  </form>
+
+
+  <p><a href="{% url 'introduction_app:index' %}">一覧に戻る</a></p>
+</section>
+
+{% endblock %}

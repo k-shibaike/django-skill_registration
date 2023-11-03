@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>ユーザー検索</h1>
+
+<section>
+  {% for user in object_list %}
+  <div>
+    <img src="" alt="">
+    <h2><a href="{% url 'talent_search:detail' user.id %}">{{ user.username }}</a></h2>
+    {% for userSkill in skill_list %}
+    {% if user.id == userSkill.author_id %}
+
+    <p>{{ userSkill }}</p>
+    {% endif %}
+    {% endfor %}
+  </div>
+  
+  {% endfor %}
+</section>
+<script>
+  console.log(1);
+  let nav = document.getElementById("navbar");
+  console.log(nav)
+  nav.style.display = "none";
+</script>
+{% endblock %}
+

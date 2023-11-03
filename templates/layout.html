@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+  <main>
+
+ 
+  <ul class='navbar-nav' id="navbar">
+    {% if user.is_authenticated %}
+    <li class='nav-time'>
+      <span class='navbar-text'>{{ user }} - </span>
+    </li>
+    <li class='nav-item'>
+      <a href='{% url "logout" %}' class='logout nav-link'>Logout</a>
+    </li>
+    {% else %}
+    <li>
+      <a href='{% url "login" %}' class='login nav-link'>Login</a>
+    </li>
+    <li>
+      <a href='{% url "accounts:signup" %}' class='signup nav-link'> Sign up </a>
+    </li>
+    {% endif %}
+  </ul>
+  {% block content %}
+  {% endblock %}
+</main>
+</body>
+
+</html>
+
+
