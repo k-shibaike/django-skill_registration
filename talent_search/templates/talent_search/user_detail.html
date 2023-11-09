@@ -4,20 +4,24 @@
 
 <section>
   {% for skill in skill_list %}
+  {% if skill.author_id == user.id %}
   <div>
     <img src="" alt="">
     <h2><a href="">{{ skill.name }}</a></h2>
   </div>
+  {% endif %}
   {% endfor %}
 </section>
 
 <section>
   {% for product in product_list %}
+  {% if product.author_id == user.id %}
   <div>
     <img src="" alt="">
     <h2><a href="">{{ product.name }}</a></h2>
     <p>{{ product.description }}</p>
   </div>
+  {% endif %}
   {% endfor %}
 </section>
 <script>

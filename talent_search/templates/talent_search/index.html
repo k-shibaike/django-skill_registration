@@ -10,7 +10,7 @@
     {% for userSkill in skill_list %}
     {% if user.id == userSkill.author_id %}
 
-    <p>{{ userSkill }}</p>
+    {{ userSkill }}
     {% endif %}
     {% endfor %}
   </div>
