@@ -7,6 +7,7 @@ from . forms import ProductForm, SkillForm
 from . models import Skill, Product
 
 
+
 class IndexView(generic.ListView):
     model = Skill
     template_name = 'introduction_app/index.html'
